@@ -1,0 +1,89 @@
+  Nibba Token
+1.mint function
+
+     1.1Mint function
+          We can use this function for mint tokens in each phase. Parameter of function is number of minting phas  You can mint tokens after mint start time of each phase of minting.
+
+	  function _minting(minting phase number) 
+
+
+1.2Reset mint parameter function
+
+   If you want to reset token minting parameter, you can use below function. 
+    Parameters are Number of mint phase, 
+    start time,
+    end time of available to mint, 
+    percent of total tokens to be minted in each phase
+    percent of add tokens for wallet1
+    percent of add tokens for wallet2
+    percent of add tokens for wallet3 
+    percent of add tokens for wallet4.
+
+   function _resetMintPara(mint Phase number, start time,  end time, total mint token percent, wallet1 percent, wallet2 percent, wallet3 percent, wallet4 percent)
+
+2.FEE function
+
+     2.1remove all fee function
+         You can use  this function set all percent of fee to 0
+  
+         function removeAllFee()
+
+     2.2Restore all fee function
+
+        You can use  this function to backup fee percent parameter to previous state.
+
+        function restoreAllFee()
+
+     2.3 Set BurnFee function
+
+         You can set burnfee use this function
+
+	function setBurnFeePercent( fundorBurnFee percent)
+
+     2.4 Set charityFee function    
+
+	You can set charityfee use this function
+
+        function setCharityFeePercent( charityFee percent)
+
+     2.5  Set LiqudityFee function
+
+	 You can set Liqudityfee use this function
+
+	 function setLiquidityFeePercent( liquidityFee percent)
+
+     2.6Set distribution fee function
+
+	You can set distribution use this function
+
+	function setTaxFeePercent( distributionFee percent)
+
+3.Locking 
+
+     3.1 reset locking parameter
+
+       Function resetDxSaleLockPara is for set Dxsale function’s start record time , end record time and unlock time. But it must be before lock state.    Start time :  record for lock start time   end time : record end time     unlock time :  token unlock time.
+
+       function _resetDxSaleLockPara(Start time, End time, Unlocktime)    
+
+       Function _resetComunityLockPara is for set community airdrop token lock function’s start record time , end record time and unlock time. But it must be before lock state.    Start time :  record for lock start time   end time : record end time     unlock time :  token unlock time.
+
+       function _resetCommunityLockPara(start time, endtime, unlocktime) 
+
+Note : All time parameter is unix timestamp GMT
+
+
+3.Prepare for Deploy.
+
+Reset wallet address
+
+Line 833 -839 of Nibba token’s code
+
+    address private _mainAddress    = 0xd11334369b2f3ABc9Af72541834f3f10e83016
+    address private _charityAddress = 0x44c7F201a4Db9c6Ad5d5e4c681284D81041c11
+    address private _founderAddress = 0x2Be9eFB06CB3E34d7a40f2B684872a26Ec7871
+    address private _devAddress     = 0xEAa254B0eB7B1235bd139c4F94D0162714A1EB
+    address private _burnAddress    = 0xF073957805Db91Ec71B4FF1d776d99419dBE8A
+    address private _lpAddress      = 0x8B5eE65Fb267ACa4BD2926B6c629F630405C77
+    address private _dxSaleAddress  = 0x3cD73D34b83F4511956ee80E977cE2AA5f64d7
+
